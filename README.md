@@ -20,6 +20,8 @@ The canvas implements the same API as the [HTML canvas element](https://develope
 
 You can run `node main.js` to render to `nihon.png` to test your changes.
 
+Alternatively, run `npx nodemon main.js` to watch the files for changes and automatically re-render the image when you save.
+
 ## Debugging
 
 In VS Code, you can debug with breakpoints by running the `Launch Program` debug configuration from the debug tab.
