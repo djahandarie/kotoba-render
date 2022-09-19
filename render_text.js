@@ -2,12 +2,6 @@ const Canvas = require('canvas');
 require('canvas-5-polyfill');
 const { fontHelper } = require('./globals.js');
 
-const TOP_PADDING_IN_PIXELS = 30;
-const BOTTOM_PADDING_IN_PIXELS = 30;
-const BASE_LEFT_PADDING_IN_PIXELS = 30;
-const BASE_RIGHT_PADDING_IN_PIXELS = 30;
-const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
-
 function render(
   text,
   textColor = 'black',
@@ -17,6 +11,12 @@ function render(
   allowFontFallback = true,
   effect = 'none',
 ) {
+  const TOP_PADDING_IN_PIXELS = effect == "antiocr" ? 30 : 6;
+  const BOTTOM_PADDING_IN_PIXELS = effect == "antiocr" ? 30 : 6;
+  const BASE_LEFT_PADDING_IN_PIXELS = effect == "antiocr" ? 30 : 6;
+  const BASE_RIGHT_PADDING_IN_PIXELS = effect == "antiocr" ? 30 : 6;
+  const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
+
   const { fontFamily } = fontHelper.getFontForAlias(fontSetting);
   const coercedFont = allowFontFallback
     ? fontHelper.coerceFontFamily(fontFamily, text)
