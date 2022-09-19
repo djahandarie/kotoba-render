@@ -6,7 +6,7 @@ const effect = 'antiocr';
 console.log(`Rendering 日本 to ./nihon.png with effect: ${effect}`);
 
 async function main() {
-  const pngData = await render('英雄', undefined, undefined, undefined, 'SetoFont', false, effect);
+  const pngData = await render('英雄', undefined, undefined, undefined, 'ackaisyo', false, effect);
   fs.writeFileSync('./nihon.png', pngData);
 }
 

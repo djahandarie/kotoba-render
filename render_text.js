@@ -2,10 +2,10 @@ const Canvas = require('canvas');
 require('canvas-5-polyfill');
 const { fontHelper } = require('./globals.js');
 
-const TOP_PADDING_IN_PIXELS = 6;
-const BOTTOM_PADDING_IN_PIXELS = 6;
-const BASE_LEFT_PADDING_IN_PIXELS = 6;
-const BASE_RIGHT_PADDING_IN_PIXELS = 6;
+const TOP_PADDING_IN_PIXELS = 30;
+const BOTTOM_PADDING_IN_PIXELS = 30;
+const BASE_LEFT_PADDING_IN_PIXELS = 30;
+const BASE_RIGHT_PADDING_IN_PIXELS = 30;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 
 function render(
@@ -51,7 +51,7 @@ function render(
     const ocrFontHeight = 28;
     for (var h = 0; h < canvas.height + ocrFontHeight; h += ocrFontHeight) {
       ctx.fillText(
-        "日本 ".repeat(50),
+        "OCR ".repeat(50),
         0,
         h
       )
@@ -60,7 +60,7 @@ function render(
     ctx.fillStyle.addColorStop(0, "red");
     ctx.fillStyle.addColorStop(0.5, "blue");
     ctx.fillStyle.addColorStop(1.0, "magenta");
-    ctx.globalAlpha = 0.6;
+    ctx.globalAlpha = 0.8;
   } else {
     ctx.fillStyle = textColor;
   }
